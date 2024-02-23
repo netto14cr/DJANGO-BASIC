@@ -1,0 +1,29 @@
+
+<!-- Use the static tag to load the CSS file -->
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Django Project</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Load the content of the child template -->
+    <div class="container">
+        {% block content %}
+        <!-- Contenido -->
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

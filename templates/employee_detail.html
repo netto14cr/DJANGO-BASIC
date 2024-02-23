@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">Employees View</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">This is the detail view of the employee</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center -m-4">
+            <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+                <div class="h-full text-center">
+                    <img alt="testimonial"
+                        class="w-40 h-40 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
+                        src="{{employee.photo.url}}">
+                    
+                    <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">{{employee.first_name}} {{employee.last_name}}</h2>
+                    <p class="text-gray-500">{{employee.designation}}</p>
+                    <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
+                    <p class="leading-relaxed"><span class="title-font font-medium">Email: </span>{{employee.email}}</p>
+                    <p class="leading-relaxed"><span class="title-font font-medium">Phone: </span>{{employee.phone_number}}</p>
+                </div>
+            </div>
+        </div><br>
+        <div class="flex justify-center">
+            <a href="{% url 'home' %}" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Go Back</a>
+          </div>
+</section>
+{% endblock %}
