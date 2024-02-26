@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">Employees list</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">We have a team of talented individuals who are passionate
+        about what they do. They are always ready to help you.</p>
+    </div>
+    <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+      <table class="table-auto w-full text-left whitespace-no-wrap">
+        <thead>
+          <tr>
+            <th
+              class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
+              #</th>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Full Name
+            </th>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Designation
+            </th>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Phone number
+            </th>
+            <th
+              class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br">
+              Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for emp in employees %}
+          <tr>
+            <td class="px-4 py-3">{{ forloop.counter }}</td>
+            <td class="px-4 py-3">{{ emp.first_name }} {{ emp.last_name }}</td>
+            <td class="px-4 py-3">{{ emp.designation }}</td>
+            <td class="px-4 py-3">{{ emp.phone_number }}</td>
+            <td class="px-4 py-3">
+              <a href="{% url 'employee_detail' emp.id %}" class="text-white bg-indigo-500 border-0 py-2 px-6 
+                focus:outline-none hover:bg-indigo-600 rounded text-lg">View</a>
+              <a href="{% url 'employee_edit' emp.id %}" class="text-white bg-yellow-500 border-0 py-2 px-6 
+                focus:outline-none hover:bg-yellow-600 rounded text-lg">Edit</a>
+              <a href="{% url 'employee_delete' emp.id %}" class="text-white bg-red-500 border-0 py-2 px-6 
+                focus:outline-none hover:bg-red-600 rounded text-lg">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="flex justify-center">
+    <a href="{% url 'employee_new' %}"
+      class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Add
+      New Employee</a>
+  </div>
+</section>
+
+{% endblock %}

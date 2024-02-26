@@ -17,4 +17,4 @@ def home(request):
     }
 
     # Render the home.html template with the employees data
-    return render(request, 'home.html', context)
+    return render(request, 'employee_list.html', context)
