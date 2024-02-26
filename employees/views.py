@@ -85,7 +85,9 @@ def employee_update(request, pk):
 
         employee.first_name = first_name
         employee.last_name = last_name
-        employee.photo = photo
+        
+        if photo:
+            employee.photo = photo
         employee.designation = designation
         employee.email = email
         employee.phone_number = phone_number
