@@ -12,7 +12,7 @@ This is a simple Django web application for managing employees.
 ## Installation
 
 1. Clone this repository:
-git clone git@github.com:netto14cr/DJANGO-BASIC.git
+git clone https://github.com/netto14cr/DJANGO-BASIC
 
 2. Navigate to the project directory:
 cd yourrepository
